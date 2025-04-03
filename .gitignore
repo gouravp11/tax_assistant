@@ -1,0 +1,27 @@
+# Node modules and dependencies
+node_modules/
+
+# Environment files
+.env
+
+# Database dumps
+tax_assistant.sql
+
+# Temporary files
+*.log
+*.tmp
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PHP-specific files
+/vendor/
+composer.lock
+
+# Sensitive configuration files
+config.php
