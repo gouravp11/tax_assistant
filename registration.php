@@ -28,12 +28,17 @@ $conn->query("CREATE TABLE IF NOT EXISTS users (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container mx-auto h-screen flex items-center">
         <!-- Application title -->
         <div class="absolute top-0 m-4 text-center mb-6">
-            <h1 class="text-4xl font-bold text-indigo-500">Taxify</h1>
+        <div class="flex items-center space-x-2">
+                    <i class="fas fa-calculator text-xl"></i>
+                    <span class="text-xl font-bold">Taxify</span>
+                </div>
         </div>
         <?php
         if (isset($_POST["submit"])) {
