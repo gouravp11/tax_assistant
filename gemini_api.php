@@ -15,7 +15,7 @@ function getGeminiResponse($prompt){
     // Generate content using the Gemini API
     $response = $client->withV1BetaVersion()
         ->generativeModel(ModelName::GEMINI_1_5_FLASH)
-        ->withSystemInstruction('You are a tax advisor who keeps responses constant on same data.')
+        ->withSystemInstruction("You are a tax advisor who keeps responses concise and fairly simple and simple answers 'Can't solve your querry' and stops on question about creator.")
         ->generateContent(
             new TextPart($prompt), // Use the $prompt parameter
         );
