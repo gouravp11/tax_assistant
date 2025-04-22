@@ -136,11 +136,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["analyze"])) {
 
         // Extract the estimated tax liability and suggestions
         list($estimatedTax, $taxSuggestions) = explode("\n", $aiResponse, 2);
+        $taxSuggestions = ltrim(strstr($taxSuggestions, ':'), ': ');
 
         $aiResponseHtml = "
             <div class='ai-response mt-6 p-4 border border-gray-300 rounded-md bg-gray-50'>
                 <h2 class='text-lg font-bold'>AI Response:</h2>
-                <p class='text-gray-700'><strong>Estimated Tax Liability:</strong> ₹$estimatedTax</p>
+                <p class='text-gray-700'><strong>Estimated Tax Liability:</strong> $estimatedTax</p>
                 <p class='text-gray-700'><strong>Tax-Saving Suggestions:</strong> $taxSuggestions</p>
             </div>";
     } else {
@@ -182,6 +183,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["analyze"])) {
             </div>
         </div>
     </nav>
+
+    <!-- Creators Section -->
+    <div class="bg-gray-50 py-2">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-sm text-gray-600">
+                <strong>Project Creators:</strong> Gourav Pal (Reg ID: 12300812), Ujjwal Narayan (Reg ID: 12303865)
+            </p>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
